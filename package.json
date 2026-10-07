@@ -1,6 +1,9 @@
 {
   "name": "@owenqwenpersonal/chatgpt",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "TypeScript client for the Codex ChatGPT Responses API",
   "type": "module",
   "exports": {
