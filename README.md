@@ -1,11 +1,11 @@
-# `@owenqwen/chatgpt`
+# `@owenqwenpersonal/chatgpt`
 
 Small Node.js 20+ TypeScript client for the Codex-shaped ChatGPT Responses API.
 It uses `https://chatgpt.com/backend-api/codex` by default and accepts any custom
 base URL for a proxy or compatible deployment.
 
 ```ts
-import { ChatGPTClient } from "@owenqwen/chatgpt";
+import { ChatGPTClient } from "@owenqwenpersonal/chatgpt";
 
 const client = new ChatGPTClient({ apiKey: process.env.CHATGPT_TOKEN });
 const response = await client.responses.create({
@@ -31,7 +31,7 @@ OAuth refresh. `authorizationUrl()` and `exchange()` support applications that
 already own their callback; `login()` starts a loopback callback server.
 
 ```ts
-import { ChatGPTClient, ChatGPTOAuth, FileCredentialStore } from "@owenqwen/chatgpt";
+import { ChatGPTClient, ChatGPTOAuth, FileCredentialStore } from "@owenqwenpersonal/chatgpt";
 
 const auth = new ChatGPTOAuth({
   store: new FileCredentialStore("./.chatgpt/tokens.json"),

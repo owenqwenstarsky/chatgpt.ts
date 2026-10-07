@@ -1,5 +1,5 @@
 {
-  "name": "@owenqwen/chatgpt",
+  "name": "@owenqwenpersonal/chatgpt",
   "version": "0.1.0",
   "description": "TypeScript client for the Codex ChatGPT Responses API",
   "type": "module",
