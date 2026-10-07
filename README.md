@@ -42,3 +42,30 @@ const client = new ChatGPTClient({ auth });
 `client.models.list()` calls the Codex `/models?client_version=...` endpoint.
 The SDK does not make live requests during its test suite; provide a custom
 `fetch` implementation for tests or specialized transports.
+
+## Agent skill
+
+The npm package includes a self-contained `chatgpt-sdk` skill with API and
+authentication references. After installing the SDK in your project, install
+the skill globally for Codex:
+
+```sh
+mkdir -p "$HOME/.codex/skills"
+cp -R node_modules/@owenqwenpersonal/chatgpt/.skills/chatgpt-sdk "$HOME/.codex/skills/"
+```
+
+To use the shared `~/.agents/skills` root, substitute that root in both commands.
+Install into one root to avoid duplicate discovery. Inspect any existing
+`chatgpt-sdk` destination before copying an update to preserve local edits.
+
+From this repository, copy `.skills/chatgpt-sdk` instead, or symlink it from a
+stable checkout when the destination does not already exist:
+
+```sh
+mkdir -p "$HOME/.codex/skills"
+ln -s "$PWD/.skills/chatgpt-sdk" "$HOME/.codex/skills/chatgpt-sdk"
+```
+
+Copies need manual updates; symlinks track the checkout and require it to stay
+in place. Invoke the installed skill as `$chatgpt-sdk`, or let the agent select
+it automatically for SDK integration tasks.
